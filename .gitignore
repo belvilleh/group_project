@@ -1,0 +1,32 @@
+# General
+.DS_Store
+__MACOSX/
+.AppleDouble
+.LSOverride
+Icon[]
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+/.idea
+/.ipynb_checkpoints
+/code/.ipynb_checkpoints
+/code/average_monthly_precipitation_barchart.png
+/code/clean_seattle_grandrapids_weather_backup.csv
+/code/monthly_yearly_precipitation_comparison.png
+/Untitled.ipynb
