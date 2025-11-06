@@ -1,0 +1,2 @@
+Model,RMSE,MAE,Features
+Linear Regression (Corrected Baseline),986.7450120500497,751.2813323217702,"['Lag_Volume_1hr', 'Hour_of_Day', 'Day_of_Week', 'TAVG_Calc', 'PRCP', 'SNOW', 'Collision_Count_Hr']"
