@@ -1,2 +1,5 @@
 Model,RMSE,MAE,Features
 Lagged Linear Regression,985.6457065379093,752.4159003950002,"['Lag_Volume_1hr', 'Hour_of_Day', 'Day_of_Week']"
+XGBoost Regressor (Untuned),640.2794552302628,412.9846498461193,"['Lag_Volume_1hr', 'Hour_of_Day', 'Day_of_Week', 'TAVG_Calc', 'PRCP', 'SNOW', 'Collision_Count_Hr']"
+XGBoost Regressor (Tuned),549.1715469495092,368.65924441015716,"['Lag_Volume_1hr', 'Hour_of_Day', 'Day_of_Week', 'TAVG_Calc', 'PRCP', 'SNOW', 'Collision_Count_Hr']"
+XGBoost Regressor (Tuned),549.1715469495092,368.65924441015716,"['Lag_Volume_1hr', 'Hour_of_Day', 'Day_of_Week', 'TAVG_Calc', 'PRCP', 'SNOW', 'Collision_Count_Hr']"
