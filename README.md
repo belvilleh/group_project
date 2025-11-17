@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The primary question we aim to answer is: Can we accurately predict the hourly volume (flow) prediction, given current and recent historical traffic data, temporal features, and relevant weather conditions?
+The primary question we aim to answer is: Can we accurately predict the hourly volume (flow) of traffic along I-5 within the city limits of Seattle, given current and recent historical traffic data, temporal features, and relevant weather conditions?
 
 Answering this question is important because:
 
