@@ -2,18 +2,30 @@
 
 ## Project Description
 
-The primary question we aim to answer is: Can we accurately predict the hourly volume (flow) of traffic along I-5 within the city limits of Seattle, given current and recent historical traffic data, temporal features, and relevant weather conditions?
+The main question of this project is:
 
-Answering this question is important because:
+Can we forecast one-hour-ahead traffic volume along Interstate 5 within Seattle using traffic sensor data, temporal patterns, weather conditions, and collision records?
 
-Enables Proactive Management: Accurate short-term predictions (15-30 minutes) are the foundation for Intelligent Transportation Systems (ITS) applications, such as dynamic ramp metering, variable speed limits, and traveler information services (e.g., advising commuters to take transit or alternative routes before congestion hits).
+Short-term traffic forecasting supports several transportation objectives:
 
-Improves Resource Allocation: Forecasting congestion allows WSDOT and emergency services to better position resources, particularly during major accidents or inclement weather, minimizing secondary incidents and reducing overall delay.
+* Proactive traffic management, including adaptive ramp metering and variable speed limits
+* Improved traveler information and rerouting guidance
+* Better emergency response and resource allocation
+* Reduced congestion-related delay and secondary incidents
+
+Seattle experiences recurring congestion on I-5, making short-term forecasting valuable for transportation agencies and planners.
 
 ## Project Overview
 
-Seattle is consistently ranked as one of the most congested cities in the United States, with drivers losing significant time and productivity each year. Traffic congestion not only costs the regional economy but also leads to increased vehicle emissions and delayed emergency response times. Addressing this problem requires predictive modeling that allows transportation agencies to intervene proactively.
-The goal of this project is to develop a robust, data-driven model for short-term traffic congestion forecasting on a critical segment of the Puget Sound region’s infrastructure: Interstate 5 (I-5) within the Seattle metropolitan area.
+This project integrates multiple real-world data sources into a continuous hourly time series and evaluates three forecasting models:
+
+1. Lagged linear regression
+2. XGBoost regressor
+3. Prophet time-series model with seasonal structure and external regressors
+
+The models are evaluated on a chronologically held-out test period using MAE and RMSE.
+
+XGBoost provides the best predictive accuracy, the linear regression model serves as a useful benchmark, and Prophet offers insight into seasonal patterns.
 
 
 ## Project Structure
@@ -28,17 +40,56 @@ The goal of this project is to develop a robust, data-driven model for short-ter
 
 
 ## Data
-	- https://wsdot.wa.gov/about/transportation-data/travel-data/traffic-count-data
-	- https://www.ncei.noaa.gov/
-	- https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::sdot-collisions-all-years/explore
+Traffic volume
+https://wsdot.wa.gov/about/transportation-data/travel-data/traffic-count-data
+
+Weather data
+https://www.ncei.noaa.gov/
+
+Collision data
+https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::sdot-collisions-all-years/explore
 
 ## Analysis
 
+### Phase I — Data Engineering and EDA
+
+* Standardize timestamps, including resolving 24:00 formatting
+* Build a continuous hourly index
+* Merge traffic, weather, and collision datasets
+* Produce exploratory plots for daily and weekly patterns, weather effects, and collision frequency
+
+### Phase II — Predictive Modeling
+
+Three models are implemented:
+
+Lagged linear regression
+A simple and interpretable benchmark using previous-hour volumes and engineered features.
+
+XGBoost regressor
+A nonlinear model that captures interactions among lagged volume, weather variables, and temporal structure.
+Produces the lowest MAE and RMSE of all models.
+
+Prophet model
+Configured with daily and weekly seasonality and external regressors.
+Useful for structural interpretation but less accurate for short-term fluctuation.
+
+### Phase III — Results
+
+* XGBoost performs best for operational short-term forecasting
+* Linear regression provides a solid baseline
+* Prophet offers meaningful seasonal structure but higher error
+* Visualizations illustrate actual versus predicted traffic and the influence of weather and collisions
 
 
 ## Results
 
-TBD
+The accompanying Jupyter notebook includes:
+
+* Comparative error metrics
+* Actual versus predicted volume plots
+* Multi-axis time-series overlays
+* Prophet trend and seasonality decomposition
+* XGBoost feature importance analysis
 
 ---
 
