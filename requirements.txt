@@ -7,11 +7,15 @@ matplotlib
 seaborn
 
 # Data handling
-pyarrow
+openpyxl
+
 
 # Machine Learning
 scikit-learn
+scipy
 statsmodels
+prophet
+xgboost
 
 
 # Jupyter & Development
